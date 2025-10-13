@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #191994, #59b8e0);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgb(0, 0, 0);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 300px;
+  animation: fadeIn 1s ease-in;
+}
+
+h1 {
+  color: #fcfcfc;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 80%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #fad0c4;
+  transform: scale(1.05);
+}
+
+button.limpar {
+  background-color: #ffffff;
+}
+
+button.limpar:hover {
+  background-color: #fad0c4;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.3s;
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#resultado.mostrar {
+  opacity: 1;
+  transform: scale(1.1);
+}
