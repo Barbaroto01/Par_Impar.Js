@@ -1,33 +1,41 @@
 function verificar() {
-  const numero = document.getElementById("numero").value;
-  const resultado = document.getElementById("resultado");
+    const numeroStr = document.getElementById("numero").value;
+    const resultadoDiv = document.getElementById("resultado");
 
-  // Remove classe de animação anterior
-  resultado.classList.remove("mostrar");
+    resultadoDiv.classList.remove("mostrar"); 
 
-  if (numero === "") {
-    resultado.textContent = "Digite um número!";
-    resultado.style.color = "red";
-    setTimeout(() => resultado.classList.add("mostrar"), 50);
-    return;
-  }
+    // 1. Tratamento de string vazia
+    if (numeroStr.trim() === "") {
+        resultadoDiv.textContent = "Digite um número!";
+        resultadoDiv.style.color = "red";
+        setTimeout(() => resultadoDiv.classList.add("mostrar"), 50);
+        return;
+    }
 
-  const num = parseInt(numero);
+    // 2. Conversão e Validação
+    const num = parseInt(numeroStr); 
 
-  if (num % 2 === 0) {
-    resultado.textContent = `O número ${num} é PAR`;
-    resultado.style.color = "green";
-  } else {
-    resultado.textContent = `O número ${num} é ÍMPAR`;
-    resultado.style.color = "blue";
-  }
+    if (isNaN(num)) {
+        resultadoDiv.textContent = "Entrada inválida. Digite um número inteiro.";
+        resultadoDiv.style.color = "red";
+    } else {
+        // 3. Checagem de Par ou Ímpar
+        if (num % 2 === 0) {
+            resultadoDiv.textContent = `O número ${num} é PAR`;
+            resultadoDiv.style.color = "green";
+        } else {
+            resultadoDiv.textContent = `O número ${num} é ÍMPAR`;
+            resultadoDiv.style.color = "blue";
+        }
+    }
 
-  setTimeout(() => resultado.classList.add("mostrar"), 50);
+    // 4. Exibe o resultado com animação
+    setTimeout(() => resultadoDiv.classList.add("mostrar"), 50);
 }
 
 function limpar() {
-  document.getElementById("numero").value = "";
-  const resultado = document.getElementById("resultado");
-  resultado.textContent = "";
-  resultado.classList.remove("mostrar");
+    document.getElementById("numero").value = "";
+    const resultadoDiv = document.getElementById("resultado");
+    resultadoDiv.textContent = "";
+    resultadoDiv.classList.remove("mostrar");
 }
