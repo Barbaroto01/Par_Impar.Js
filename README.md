@@ -13,8 +13,8 @@ Aplicação simples em JavaScript que recebe um número digitado pelo usuário e
 - Exibição do resultado na tela
 
 ## Como executar
-1. Baixe ou clone o repositório
-2. Abra o arquivo `index.html` no navegador
+Abra o projeto diretamente pelo navegador através do GitHub Pages:
+https://barbaroto01.github.io/Par_Impar.Js/
 
 ## Aprendizados
 Este projeto foi desenvolvido para praticar:
