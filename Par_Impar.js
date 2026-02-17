@@ -2,9 +2,9 @@ function verificar() {
     const numeroStr = document.getElementById("numero").value;
     const resultadoDiv = document.getElementById("resultado");
 
-    resultadoDiv.classList.remove("mostrar"); 
+    resultadoDiv.classList.remove("mostrar");
 
-    // 1. Tratamento de string vazia
+    // 1. Campo vazio
     if (numeroStr.trim() === "") {
         resultadoDiv.textContent = "Digite um número!";
         resultadoDiv.style.color = "red";
@@ -12,14 +12,14 @@ function verificar() {
         return;
     }
 
-    // 2. Conversão e Validação
-    const num = parseInt(numeroStr); 
+    // 2. Conversão segura
+    const num = Number(numeroStr);
 
-    if (isNaN(num)) {
-        resultadoDiv.textContent = "Entrada inválida. Digite um número inteiro.";
+    if (!Number.isInteger(num)) {
+        resultadoDiv.textContent = "Digite um número inteiro válido.";
         resultadoDiv.style.color = "red";
     } else {
-        // 3. Checagem de Par ou Ímpar
+        // 3. Par ou ímpar
         if (num % 2 === 0) {
             resultadoDiv.textContent = `O número ${num} é PAR`;
             resultadoDiv.style.color = "green";
@@ -29,7 +29,7 @@ function verificar() {
         }
     }
 
-    // 4. Exibe o resultado com animação
+    // 4. Animação
     setTimeout(() => resultadoDiv.classList.add("mostrar"), 50);
 }
 
